@@ -10,7 +10,7 @@ public partial class BetterMovement : CharacterBody2D
 	public override void _Ready()
 	{
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		// Het game-venster moet zichtbaar blijven boven de editor om toetsen te kunnen ontvangen.
+		// Houd het game-venster zichtbaar; klik erin voor toetsenbordfocus.
 		if (OS.GetName() == "Windows")
 		{
 			DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.AlwaysOnTop, true, (int)DisplayServer.MainWindowId);
