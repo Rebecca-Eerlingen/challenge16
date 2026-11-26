@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://sdlncg77juub"]
+
+[ext_resource type="Texture2D" uid="uid://br6bljjacd2eg" path="res://images/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="1_j4fip"]
+[ext_resource type="Script" uid="uid://d3oxveas1hi0r" path="res://Scenes/TestScenes/CropPlot.cs" id="1_m7hn1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x24kf"]
+size = Vector2(53, 52)
+
+[node name="CropPlot" type="Area2D" unique_id=470700392]
+script = ExtResource("1_m7hn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=35887819]
+position = Vector2(147.5, 78)
+scale = Vector2(4.0729165, 5.5)
+texture = ExtResource("1_j4fip")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916002693]
+position = Vector2(145, 96)
+shape = SubResource("RectangleShape2D_x24kf")
+
+[node name="Timer" type="Timer" parent="." unique_id=1844983656]

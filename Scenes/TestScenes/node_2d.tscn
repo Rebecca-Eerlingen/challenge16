@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cb052gw4mrqaa"]
+
+[ext_resource type="PackedScene" uid="uid://dyu3l4skxm8e3" path="res://BetterMovement.tscn" id="1_cce1w"]
+
+[node name="Node2D" type="Node2D" unique_id=547921642]
+
+[node name="CharacterBody2D" parent="." unique_id=198471177 instance=ExtResource("1_cce1w")]
+position = Vector2(366, 289)
+scale = Vector2(4, 4)
