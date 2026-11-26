@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dqp8e8x4x1u7r"]
 
 [ext_resource type="Script" uid="uid://by3qsj4c3otaa" path="res://scripts/BetterMovement.cs" id="1_tsvps"]
-[ext_resource type="Texture2D" path="res://images/player/Player.png" id="2_wqs6v"]
-[ext_resource type="Texture2D" path="res://images/player/Player_Actions.png" id="3_mxm4u"]
+[ext_resource type="Texture2D" uid="uid://ennovmkcppkv" path="res://Player.png" id="2_wqs6v"]
+[ext_resource type="Texture2D" uid="uid://w55vgrwvgpes" path="res://Player_Actions.png" id="3_mxm4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olnx1"]
 atlas = ExtResource("2_wqs6v")

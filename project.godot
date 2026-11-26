@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ch-16"
-run/main_scene="uid://ofncwdsb8s7c"
+run/main_scene="uid://dgxuab7v8bjvp"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 
 [display]

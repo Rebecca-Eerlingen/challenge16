@@ -1,18 +1,12 @@
 [gd_scene format=3 uid="uid://dgxuab7v8bjvp"]
 
-[ext_resource type="PackedScene" uid="uid://cvtncm6101gci" path="res://Scenes/TestScenes/TestSceneWater.tscn" id="1_bvrni"]
+[ext_resource type="PackedScene" uid="uid://b8kwmy2u545pq" path="res://Scenes/TestScenes/TestScene.tscn" id="1_bvrni"]
 [ext_resource type="PackedScene" uid="uid://dqp8e8x4x1u7r" path="res://Walking.tscn" id="2_dp36p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m57x"]
-size = Vector2(81, 114.5)
 
 [node name="MainScene" type="Node2D" unique_id=1161341778]
 
 [node name="TestScene" parent="." unique_id=1736816575 instance=ExtResource("1_bvrni")]
 
 [node name="CharacterBody2D" parent="." unique_id=1766938494 instance=ExtResource("2_dp36p")]
-scale = Vector2(0.4, 0.4)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=923377498]
-position = Vector2(4.5, -5.25)
-shape = SubResource("RectangleShape2D_2m57x")
+position = Vector2(160, 160)
+scale = Vector2(0.7, 0.7)
