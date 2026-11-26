@@ -3,9 +3,11 @@ using Godot;
 public partial class BetterMovement : CharacterBody2D
 {
 	public const float Speed = 300.0f;
+	private const float InteractionRange = 64.0f;
 
 	private AnimatedSprite2D _animatedSprite;
 	private Vector2 _facing = Vector2.Down;
+	private Inventory _inventory;
 
 	public override void _Ready()
 	{
@@ -19,6 +21,24 @@ public partial class BetterMovement : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		if (Input.IsActionJustPressed("ToggleInventory"))
+		{
+			_inventory ??= GetTree().GetFirstNodeInGroup("inventory") as Inventory;
+			_inventory?.Toggle();
+		}
+
+		if (_inventory?.IsOpen == true)
+		{
+			Velocity = Vector2.Zero;
+			_animatedSprite.Play(AnimationFor(_facing, walking: false));
+			return;
+		}
+
+		if (Input.IsActionJustPressed("Interact"))
+		{
+			TryInteract();
+		}
+
 		Vector2 velocity = Velocity;
 		// Lees WASD en pijltjes direct, onafhankelijk van de InputMap-acties.
 		Vector2 direction = new Vector2(
@@ -57,6 +77,29 @@ public partial class BetterMovement : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	private void TryInteract()
+	{
+		CropPlot closestPlot = null;
+		float closestDistance = InteractionRange;
+
+		foreach (Node node in GetTree().GetNodesInGroup("crop_plots"))
+		{
+			if (node is not CropPlot cropPlot)
+			{
+				continue;
+			}
+
+			float distance = GlobalPosition.DistanceTo(cropPlot.InteractionPosition);
+			if (distance <= closestDistance)
+			{
+				closestDistance = distance;
+				closestPlot = cropPlot;
+			}
+		}
+
+		closestPlot?.Interact();
 	}
 
 	private static string AnimationFor(Vector2 facing, bool walking)

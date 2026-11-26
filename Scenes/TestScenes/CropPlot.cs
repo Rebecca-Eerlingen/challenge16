@@ -4,39 +4,36 @@ public partial class CropPlot : Area2D
 {
     [Export] public int FirstGrowthFrame = 1; // First frame of growing wheat (skips frame 0)
     [Export] public int MaxGrowthStage = 3;   // Last frame of growing wheat (skips the final frame)
-    [Export] public PackedScene WheatDropScene;
 
     private Sprite2D _sprite;
     private Timer _growthTimer;
+    private CollisionShape2D _interactionShape;
     private int _currentStage;
     private bool _isPlanted = false;
+
+    public Vector2 InteractionPosition => _interactionShape.GlobalPosition;
 
     public override void _Ready()
     {
         _sprite = GetNode<Sprite2D>("Sprite2D");
         _growthTimer = GetNode<Timer>("Timer");
+        _interactionShape = GetNode<CollisionShape2D>("CollisionShape2D");
 
-        InputEvent += OnInputEvent;
+        AddToGroup("crop_plots");
         _growthTimer.Timeout += OnGrowthTimerTimeout;
 
-        // Hide the sprite when nothing is planted (hides frame 0)
         _sprite.Visible = false;
     }
 
-    private void OnInputEvent(Node viewport, InputEvent @event, long shapeIdx)
+    public void Interact()
     {
-        if (@event is InputEventMouseButton mouseEvent &&
-            mouseEvent.Pressed &&
-            mouseEvent.ButtonIndex == MouseButton.Left)
+        if (!_isPlanted)
         {
-            if (!_isPlanted)
-            {
-                PlantWheat();
-            }
-            else if (_currentStage >= MaxGrowthStage)
-            {
-                HarvestWheat();
-            }
+            PlantWheat();
+        }
+        else if (_currentStage >= MaxGrowthStage)
+        {
+            HarvestWheat();
         }
     }
 
@@ -65,27 +62,17 @@ public partial class CropPlot : Area2D
 
     private void HarvestWheat()
     {
-        _isPlanted = false;
-        _sprite.Visible = false; // Hide wheat again after harvesting
-
-        SpawnWheatDrop();
-        GD.Print("Wheat harvested!");
-    }
-
-    private void SpawnWheatDrop()
-    {
-        if (WheatDropScene == null)
+        Inventory inventory = GetTree().GetFirstNodeInGroup("inventory") as Inventory;
+        if (inventory == null)
         {
-            GD.PrintErr("WheatDropScene is not assigned in the Inspector!");
+            GD.PushError("Inventory node is missing from the main scene.");
             return;
         }
 
-        Node2D wheatDrop = WheatDropScene.Instantiate<Node2D>();
-        float offsetX = (float)GD.RandRange(-12.0, 12.0);
-        float offsetY = (float)GD.RandRange(-12.0, 12.0);
-        wheatDrop.GlobalPosition = GlobalPosition + new Vector2(offsetX, offsetY);
-
-        GetParent().AddChild(wheatDrop);
+        _isPlanted = false;
+        _sprite.Visible = false;
+        inventory.AddWheat(1);
+        GD.Print("Wheat harvested!");
     }
 }
 

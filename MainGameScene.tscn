@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8kwmy2u545pq" path="res://Scenes/TestScenes/TestScene.tscn" id="1_bvrni"]
 [ext_resource type="PackedScene" uid="uid://dqp8e8x4x1u7r" path="res://Walking.tscn" id="2_dp36p"]
+[ext_resource type="Script" path="res://scripts/Inventory.cs" id="3_inventory"]
 
 [node name="MainScene" type="Node2D" unique_id=1161341778]
 
@@ -10,3 +11,6 @@
 [node name="CharacterBody2D" parent="." unique_id=1766938494 instance=ExtResource("2_dp36p")]
 position = Vector2(160, 160)
 scale = Vector2(0.7, 0.7)
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+script = ExtResource("3_inventory")
