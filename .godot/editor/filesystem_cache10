@@ -1,9 +1,0 @@
-78098b89c88a74ebe8c20117b8754620
-::res://::1795092550
-BetterMovement.tscn::PackedScene::8886803124472924344::1795092274::0::1::::<><><>0<>0<><>::uid://cyq45g8lud11o::::res://scripts/BasicMovement.cs<>uid://ennovmkcppkv::::res://Player.png
-Main.tscn::PackedScene::993759753165135394::1795092274::0::1::::<><><>0<>0<><>::uid://ennovmkcppkv::::res://Player.png<>uid://by3qsj4c3otaa::::res://scripts/BetterMovement.cs<>uid://w55vgrwvgpes::::res://Player_Actions.png
-Player.png::CompressedTexture2D::308407729361179389::1795092274::1795092274::1::::<><><>0<>0<>677c73b3e59d56261e833d34d0126d96<>res://.godot/imported/Player.png-3b381e068d1d74cc2895fb9be41402b0.ctex::
-Player_Actions.png::CompressedTexture2D::1607945246543174102::1795092274::1795092274::1::::<><><>0<>0<>9fda9b793f568b91c111430f1649e2b2<>res://.godot/imported/Player_Actions.png-4177547f2c999299f8c0093565a6392b.ctex::
-README.md::TextFile::-1::1795000947::0::1::::<><><>0<>0<><>::
-::res://scripts/::1795092275
-BetterMovement.cs::CSharpScript::4129759641932443388::1795092275::0::1::::<>CharacterBody2D<><>0<>0<><>::
