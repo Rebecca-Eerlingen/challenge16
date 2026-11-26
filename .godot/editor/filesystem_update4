@@ -1,2 +1,7 @@
+res://BetterMovement.tscn
+res://Scenes/TestScenes/TestSceneCrops.tscn
 res://scripts/BetterMovement.cs
-res://scripts/NewScript.cs
+res://Scenes/TestScenes/node_2d.tscn
+res://Scenes/TestScenes/crop_plot.tscn
+res://Scenes/TestScenes/TestScene.tscn
+res://Scenes/TestScenes/CropPlot.cs

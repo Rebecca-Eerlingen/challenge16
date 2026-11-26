@@ -15,3 +15,4 @@ C:\Users\nofre\OneDrive\Documents\ch-16\.godot\mono\temp\obj\Debug\refint\ch-16.
 C:\Users\nofre\OneDrive\Documents\ch-16\.godot\mono\temp\obj\Debug\ch-16.pdb
 C:\Users\nofre\OneDrive\Documents\ch-16\.godot\mono\temp\obj\Debug\ch-16.genruntimeconfig.cache
 C:\Users\nofre\OneDrive\Documents\ch-16\.godot\mono\temp\obj\Debug\ref\ch-16.dll
+C:\Users\nofre\OneDrive\Documents\ch-16\.godot\mono\temp\obj\Debug\ch-16.sourcelink.json

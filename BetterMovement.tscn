@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyu3l4skxm8e3"]
 
-[ext_resource type="Script" uid="uid://cyq45g8lud11o" path="res://scripts/BasicMovement.cs" id="1_4va51"]
+[ext_resource type="Script" uid="uid://by3qsj4c3otaa" path="res://scripts/BetterMovement.cs" id="1_4va51"]
 [ext_resource type="Texture2D" uid="uid://ennovmkcppkv" path="res://Player.png" id="1_glv2v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uu6xs"]
